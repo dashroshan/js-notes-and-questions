@@ -76,7 +76,7 @@ listName.includes(element) // true if element in list
 listName.indexOf(element) // 1st location from left where element is found, -1 if not found
 listName.lastIndexOf(element) // From right
 listName.slice(fromId,untilId) // List from fromId(included) to untilId(not included, default until end)
-listName.concat(anotherListOrElement) // Add list to list
+newList=listName.concat(anotherListOrElement) // Returns list added to another list
 ```
 
 ### Object = Dictionary
@@ -128,3 +128,22 @@ Math.property();
 ```js
 jsonString = JSON.stringify(object) // convert object to json
 object = JSON.parse(jsonString) // convert json to object
+```
+
+## 05. Higher Order Functions
+
+```js
+array.forEach(function(element){
+	// Go through array elements one by one
+});
+
+array.filter(function(element){
+	// If element satisfy any condition return it
+	return element;
+}); // Returns a new filtered array
+
+array.map(function(element){
+	// Do something to all elements
+	return modifiedElement;
+}); // Returns an array with elements modified in some way
+```
