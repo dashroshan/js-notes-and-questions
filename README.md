@@ -200,3 +200,20 @@ class ClassName{
 // obj.property3 = value; will invoke set
 // value = obj.property3; will invoke get 
 ```
+
+## 08. Errors
+
+```js
+"use strict"; // Put at top for better error reporting
+throw new Error("Error msg"); // Trigger an error
+
+try{
+	// Do stuff
+}
+catch(error){
+	// Do stuff in case of error
+}
+finally{
+	// Do stuff w or w/o error
+}
+```
