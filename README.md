@@ -61,7 +61,7 @@ let functionName = (parameters) => {
 
 ## 04. Data Structures
 
-### Array = List
+### Array =~ List
 
 ```js
 let listName=[element1, element2...] // Make a list
@@ -79,7 +79,7 @@ listName.slice(fromId,untilId) // List from fromId(included) to untilId(not incl
 newList=listName.concat(anotherListOrElement) // Returns list added to another list
 ```
 
-### Object = Dictionary
+### Object =~ Dictionary
 
 ```js
 let objName={"key1":value1, "key2":value2...} // Make an object
@@ -146,4 +146,57 @@ array.map(function(element){
 	// Do something to all elements
 	return modifiedElement;
 }); // Returns an array with elements modified in some way
+```
+
+## 06. Secret Life of Objects
+
+### Method
+
+```js
+let object={"key1":val1, "someFn":function(arguments){
+	// Do Stuff
+	// val1 can be used here as this.key1
+}}; // Used as object.someFn(arguments), here someFn is the method
+```
+
+### Prototype
+
+```js
+let objPrototype={"someFn1":function(arguments){/*Do Stuff*/},"someFn2":function(arguments){/*Do Stuff*/}};
+let newObj = Object.create(objPrototype) // someFn1 and 2 will be included by default with newObj
+```
+
+### Class
+
+> Prototypes can only contain methods. But class can contain both methods and properties. Its better to use classes instead of prototypes.
+
+```js
+class ClassName{ /*Class names start with uppercase*/
+	constructor(argumentsA){
+		this.property1=arg1;
+		this.property2=arg2;
+	}
+	someFn1(argumentsB){/*Do Stuff*/};
+	someFn2(argumentsB){/*Do Stuff*/};
+}
+
+let obj=new ClassName(agumentsA); // This obj will have property1,2 and someFn1,2
+```
+
+### Get, Set, Static
+
+```js
+class ClassName{
+	constructor(argumentsA){
+		this.property1=arg1;
+		this.property2=arg2;
+	}
+	get property3(){/*Return something*/};
+	set property3(value){/*Do something and store in other properties*/};
+	static property4(argumentsB){
+		return new ClassName(argumentsA);
+	}; // Create ClassName with different set of arguments
+}
+// obj.property3 = value; will invoke set
+// value = obj.property3; will invoke get 
 ```
